@@ -33,3 +33,10 @@ input[type="radio"]:checked + label:before{
     background-color: rgb(51 65 85);;
 }
 
+@media screen and (max-width: 767px) {
+    label{
+        width: 280px;
+        margin: 10px auto;
+    }
+  }
+

@@ -6,7 +6,7 @@ import { faBarsStaggered, faXmark } from '@fortawesome/free-solid-svg-icons'
 const NavBar = () => {
     const [open, setOpen] = useState(false)
     return (
-        <nav className='px-5 py-5 mb-5 flex sticky top-0 justify-between items-center bg-white shadow-md z-10'>
+        <nav className='px-5 h-16 flex sticky top-0 justify-between items-center bg-white shadow-md z-10'>
             <Link to='/'>
                 <div className='flex items-center'>
                     <h2 className='text-xl font-medium'><span className='text-orange-700'>Quiz</span>Net</h2>

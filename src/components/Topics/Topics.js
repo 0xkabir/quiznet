@@ -1,9 +1,13 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import Topic from '../Topic/Topic';
 
 const Topics = () => {
+    const topics = useLoaderData().data
+    console.log(topics)
     return (
-        <div>
-            <h1 className='text-5xl font-bold text-center my-5'>This is Topics Page</h1>
+        <div className='grid md:grid-cols-4 mx-10 gap-10'>
+            {topics.map(topic=><Topic key={topic.id} topic={topic}></Topic>)}
         </div>
     );
 };

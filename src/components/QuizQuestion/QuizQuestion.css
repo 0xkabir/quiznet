@@ -1,0 +1,35 @@
+.question p{
+    padding-left: 5px;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+label {
+    cursor: pointer;
+    width: 320px;
+    margin: 10px auto;
+    position: relative;
+    color: rgb(51 65 85);;
+    font-family: 'Poppins',sans-serif;
+    border: 2px solid rgb(51 65 85);;
+    border-radius: 5px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="radio"]:checked+label{
+    background-color: rgb(51 65 85);;
+    color: white;
+}
+
+input[type="radio"]:checked + label:before{
+    height: 16px;
+    width: 16px;
+    border: 10px solid white;
+    background-color: rgb(51 65 85);;
+}
+

@@ -13,7 +13,7 @@ function App() {
       {path:'/', element:<Topics></Topics>, loader: ()=>fetch('https://openapi.programming-hero.com/api/quiz')},
       {path:'/topics', element:<Topics></Topics> , loader: ()=>fetch('https://openapi.programming-hero.com/api/quiz')},
       {path:'/statistics', element:<Statistics></Statistics>, loader: ()=>fetch('https://openapi.programming-hero.com/api/quiz')},
-      {path:'/blog', element:<Blog></Blog>},
+      {path:'/blog', element:<Blog></Blog>, loader: ()=>fetch('blogs.json')},
       {path:'/quiz/:id', element:<Quiz></Quiz>, loader: ({params})=>fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`)},
       {path:'*', element:<Error></Error>}
     ]}

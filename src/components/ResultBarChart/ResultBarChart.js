@@ -12,7 +12,7 @@ const ResultBarChart = () => {
                 <YAxis />
                 <Tooltip cursor={false}/>
             </BarChart>
-            </ResponsiveContainer>
+        </ResponsiveContainer>
     );
 };
 

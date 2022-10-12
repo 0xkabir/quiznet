@@ -6,10 +6,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
-const QuizQuestion = ({serial, quizQuestion}) => {
+const QuizQuestion = ({serial, quizQuestion, correct, setCorrect, incorrect, setIncorrect, givenAnswer, setGivenAnswer}) => {
     const {question, options, correctAnswer} = quizQuestion
-    const showToast = answer => {
+    const [disabled, setDisabled] = useState(false)
+    const showToastAndDisableBtn = answer => {
+        setDisabled(!disabled)
         if(answer === correctAnswer){
+            setCorrect(correct+1)
+            setGivenAnswer(givenAnswer+1)
             return toast.success('Correct Answer!!', {
                 position: "bottom-right",
                 autoClose: 2500,
@@ -22,6 +26,8 @@ const QuizQuestion = ({serial, quizQuestion}) => {
                 });
         }
         else{
+            setIncorrect(incorrect+1)
+            setGivenAnswer(givenAnswer+1)
             return toast.error('Incorrect Answer', {
                 position: "bottom-right",
                 autoClose: 2500,
@@ -57,7 +63,7 @@ const QuizQuestion = ({serial, quizQuestion}) => {
             <div>
                 {
                     options.map((option, index) =><div key={index} className='hover:bg-slate-300 rounded'>
-                            <input type="radio" name={`question-${serial}`} id={`option-${serial}-${index}`} onClick={()=>showToast(option)}/>
+                            <input type="radio" name={`question-${serial}`} id={`option-${serial}-${index}`} disabled={disabled?true:false} onClick={()=>showToastAndDisableBtn(option)}/>
                             <label htmlFor={`option-${serial}-${index}`}>{option}</label>
                             <ToastContainer
                             position="bottom-right"

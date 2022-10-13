@@ -41,7 +41,7 @@ const Statistics = () => {
     return (
         <div>
             <h1 className='text-2xl md:text-4xl font-bold text-center my-10'>Overview of the Topics</h1>
-            <div className='md:w-[40vw] mx-auto md:h-[60vh] w-[100vw] h-[60vh] flex flex-col items-center'>
+            <div className='md:w-[70vw] lg:w-[40vw] mx-auto md:h-[60vh] w-[100vw] h-[60vh] flex flex-col items-center'>
             <ResponsiveContainer>
             <BarChart width={300} height={200} barSize={20} barGap={50} data={chartData}>
                  <Bar dataKey="total" fill="#64748b" />

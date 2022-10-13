@@ -54,7 +54,7 @@ const QuizQuestion = ({serial, quizQuestion, correct, setCorrect, incorrect, set
                 </div>
             <div className={show?'block':'hidden'}>
                 <h2 className='text-2xl font-medium'>Correct Answer:</h2>
-                <p className='text-center pt-5'>{correctAnswer}</p>
+                <p className='text-center md:text-xl lg:text-base pt-5'>{correctAnswer}</p>
             </div>
             <div className={show?'hidden':'block'}>
             <div className='flex items-start question'>
@@ -62,7 +62,7 @@ const QuizQuestion = ({serial, quizQuestion, correct, setCorrect, incorrect, set
             </div>   
             <div>
                 {
-                    options.map((option, index) =><div key={index} className='hover:bg-slate-300 rounded'>
+                    options.map((option, index) =><div key={index} className='hover:bg-slate-300 md:text-xl lg:text-base rounded'>
                             <input type="radio" name={`question-${serial}`} id={`option-${serial}-${index}`} disabled={disabled?true:false} onClick={()=>showToastAndDisableBtn(option)}/>
                             <label htmlFor={`option-${serial}-${index}`}>{option}</label>
                             <ToastContainer

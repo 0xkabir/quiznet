@@ -44,3 +44,9 @@ input[type="radio"]:checked + label:before{
     }
   }
 
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    .question{
+        font-size: 20px;
+    }
+}
+

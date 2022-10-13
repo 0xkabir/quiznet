@@ -13,7 +13,7 @@ const Blog = () => {
         },
         {
             question:"Write details about useRef()",
-            answer:"useRef() is a hook that allows to create a reference to DOM elemnt in the functional component. This hook returns a mutable object that has a property called .current. The value is stored in the refContainer.current property. Values are accessed from the current property of the mutable object. The .current property can be initialised to the passed argument initialValue e.g. useRef(initialValue). The object can persist a value for a full lifetime of the component."
+            answer:"useRef() is a hook that allows to create a reference to DOM elemnt in the functional component. This hook returns a mutuable object which stores a variable in its .current property. The value of the variable is passed as an argument during creating the reference using useRef(). The returned object exists during the full lifetime of the component. The created reference object can be passed to an element using the ref attribute. React changes the .current property of that reference object whenever the DOM node changes. However useRef() doesn't cause React to re-render even if the value of the .current property is changed."
         }
     ]
     return (

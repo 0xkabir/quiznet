@@ -10,7 +10,7 @@ const Topic = ({topic}) => {
             <img src={logo} alt="" className='dimmed'/>
             <div className='absolute w-72 h-full backdrop-brightness-50 backdrop-blur-sm py-10 flex flex-col justify-center items-center text-gray-200'>
                 <h3 className='text-3xl font-medium'>{name}</h3>
-                <p className='text-sm'>Total Quiz: {total}</p>
+                <p className='text-sm md:text-base lg:text-sm'>{total} Quizes | 10 Minutes</p>
             </div>
             </div>
         </NavLink>

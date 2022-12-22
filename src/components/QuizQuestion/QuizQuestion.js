@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Markup } from 'interweave';
 import './QuizQuestion.css'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import toast from 'react-hot-toast';
 
 const QuizQuestion = ({serial, quizQuestion, correct, setCorrect, incorrect, setIncorrect, givenAnswer, setGivenAnswer}) => {
     const {question, options, correctAnswer} = quizQuestion
@@ -14,30 +13,12 @@ const QuizQuestion = ({serial, quizQuestion, correct, setCorrect, incorrect, set
         if(answer === correctAnswer){
             setCorrect(correct+1)
             setGivenAnswer(givenAnswer+1)
-            return toast.success('Correct Answer!!', {
-                position: "bottom-right",
-                autoClose: 2500,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "dark",
-                });
+            return toast.success('Correct Answer!!');
         }
         else{
             setIncorrect(incorrect+1)
             setGivenAnswer(givenAnswer+1)
-            return toast.error('Incorrect Answer', {
-                position: "bottom-right",
-                autoClose: 2500,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "dark",
-                });
+            return toast.error('Incorrect Answer');
         }
 
     }
@@ -65,18 +46,6 @@ const QuizQuestion = ({serial, quizQuestion, correct, setCorrect, incorrect, set
                     options.map((option, index) =><div key={index} className='hover:bg-slate-300 md:text-xl lg:text-base rounded'>
                             <input type="radio" name={`question-${serial}`} id={`option-${serial}-${index}`} disabled={disabled?true:false} onClick={()=>showToastAndDisableBtn(option)}/>
                             <label htmlFor={`option-${serial}-${index}`}>{option}</label>
-                            <ToastContainer
-                            position="bottom-right"
-                            autoClose={2500}
-                            hideProgressBar={false}
-                            newestOnTop={false}
-                            closeOnClick
-                            rtl={false}
-                            pauseOnFocusLoss
-                            draggable
-                            pauseOnHover
-                            theme="dark"
-                            />
                         </div>)
                     }
                 </div>
